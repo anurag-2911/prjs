@@ -5,39 +5,8 @@
   </head>
   <body>
     <h1>Hello World!</h1>
-    <script>
-      const util = require("util");
-      const exec = util.promisify(require("child_process").exec);
-
-      const testOpenEvent = async () => {
-        let eventFired = false;
-
-        nw.App.onOpen.addListener((params) => {
-          console.log("params", params);
-          eventFired = true;
-        });
-
-        {{/* nw.App.on("open", (params) => {
-          console.log("params", params);
-          eventFired = true;
-        }); */}}
-
-        const result = await exec(
-          `${process.argv} ${nw.App.startPath} --testing`
-        );
-        if (!eventFired) return false;
-        return true;
-      };
-
-      (async () => {
-        for (let i = 0; i <= 5; i++) {
-          console.log(`Test count: ${i}`);
-
-          if (!(await testOpenEvent())) {
-            console.log("The open event did not fire!");
-          }
-        }
-      })();
-    </script>
+    <script type = "text/javascript" src="index.js"></script>  
+    
+    <input type = "button" onclick = "Start()" value = "Display"> 
   </body>
 </html>
