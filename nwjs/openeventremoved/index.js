@@ -1,33 +1,52 @@
-function Start(){
-// alert('hello');
-      const util = require("util");
-      const exec = util.promisify(require("child_process").exec);
+const appOpenEvent = () => {
+  console.log("appOpen event");
+  eventFired = true;
+};
+function Start() {
+    
+  getListener();
 
-      const testOpenEvent = async () => {
-        let eventFired = false;
-        const appOpen = (params) =>{
-          console.log("params", params);
-          console.log('appOpen event');
-          eventFired = true;
-        };
+  addAppOpenListener(appOpenEvent);
 
-        nw.App.onOpen.addListener(appOpen);
-       
+  getListener();
 
-        const result = await exec(
-          `${process.argv} ${nw.App.startPath} --testing`
-        );
-        if (!eventFired) return false;
-        return true;
-      };
-      
-      (async () => {
-        for (let i = 0; i <= 5; i++) {
-          console.log(`Test count: ${i}`);
+  removeAppOpenListener(appOpenEvent);
 
-          if (!(await testOpenEvent())) {
-            console.log("The open event did not fire!");
-          }
-        }
-      })();
+  getListener();
+
+  setTimeout(addAppOpenListener(appOpenEvent), 2000);
+  setTimeout(getListener(), 3000);
+  //   listListener();
+}
+
+function removeAppOpenListener(appOpen) {
+  const listenerCount = getListener();
+  console.log("listener count is " + listenerCount);
+  if (listenerCount > 0) {
+    console.log("removing open event listener");
+    nw.App.onOpen.removeListener(appOpen);
+  }
+}
+
+function addAppOpenListener(appOpen) {
+  const listenerCount = getListener();
+  console.log("listener count is " + listenerCount);
+  if (listenerCount == 0) {
+    console.log("adding open listener");
+    nw.App.onOpen.addListener(appOpen);
+  }
+}
+
+function getListener() {
+  var len = 0;
+  console.log("listing listeners");
+  const listeners = nw.App.onOpen.getListeners();
+
+  //   console.log(listeners);
+
+  if (listeners) {
+    len = listeners.length;
+    console.log("length of listeners " + len);
+  }
+  return len;
 }
