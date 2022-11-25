@@ -2,6 +2,7 @@ function testFunction() {
   console.log("hello");
   console.warn('warning');
   console.error('test error');
+  console.error(new Error('constructing error'));
 
   const print = require("./eventloop");
   print.PrintSomething();
@@ -31,4 +32,8 @@ function testFunction() {
     r1.close();
   });
 }
-exports.testFunction = testFunction;
+
+function traceFunction(){
+  console.trace('lets trace it');
+}
+module.exports = {testFunction,traceFunction};

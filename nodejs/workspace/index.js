@@ -1,5 +1,12 @@
-const { testFunction } = require("./testFunction");
+const { testFunction,traceFunction } = require("./node-basics/testFunction");
+const {aboutConsoles} = require("./node-basics/console");
 
-testFunction();
+const fn=()=>{
+    aboutConsoles();
+    // testFunction();
+    // traceFunction();
+}
+
+fn();
 
 
