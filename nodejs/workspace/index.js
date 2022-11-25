@@ -1,4 +1,5 @@
-console.log('hello');
+const { testFunction } = require("./testFunction");
 
-const print = require('./eventloop');
-print.PrintSomething();
+testFunction();
+
+
