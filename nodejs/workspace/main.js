@@ -8,7 +8,7 @@ const { processbasics } = require("./node-basics/process");
 
 const main = () => {
   processbasics();
-  osbasics();
+//   osbasics();
   // fileSystem();
   // console.log(global);
   // eventsTest();
