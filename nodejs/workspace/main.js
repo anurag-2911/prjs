@@ -6,8 +6,10 @@ const { eventsTest } = require("./node-basics/events");
 const { fileSystem } = require("./node-basics/FileSystem");
 const { processbasics } = require("./node-basics/process");
 const {httpTest} = require('./lib/http/http');
+const {fsDetails} = require("./node-basics/fs-detailed");
 const main = () => {
-  httpTest();
+  fsDetails();
+  // httpTest();
   // processbasics();
 //   osbasics();
   // fileSystem();
