@@ -23,7 +23,11 @@ int main()
 {
 	std::cout << "Hello World!\n";
 	LPWSTR domainName = (LPWSTR)malloc(2 * sizeof(WCHAR));
-	domainName = L"AzureAD";
+	domainName = const_cast<LPWSTR>(L"AzureAD");
+	if (domainName == const_cast<LPWSTR>(L"AzureAD"))
+	{
+		std::cout << "matched";
+	}
 
 }
 
