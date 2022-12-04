@@ -1,3 +1,5 @@
-FROM debian:11
+FROM nginx:1.15
 
-CMD ["echo", "Hello world"]
+COPY index.html /usr/share/nginx/html
+
+
