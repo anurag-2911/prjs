@@ -1,4 +1,5 @@
 
 const {main} = require('./main');
-
-main();
+const {server} = require('./rest/server');
+server();
+// main();
