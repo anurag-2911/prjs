@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,11 @@ namespace ConsoleAppDotNetFramework
     {
         static void Main(string[] args)
         {
+            Starter.Connect();
 
+            string runtime = System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription;
+
+            Console.WriteLine("runtime " + runtime);
         }
     }
 }
