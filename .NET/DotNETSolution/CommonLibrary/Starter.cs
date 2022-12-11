@@ -2,9 +2,9 @@
 {
     public class Starter
     {
-        public static void Start()
+        public static string Connect()
         {
-
+            return "from .NET library";
         }
     }
 }

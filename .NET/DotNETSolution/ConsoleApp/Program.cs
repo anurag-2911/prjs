@@ -2,4 +2,4 @@
 using CommonLibrary;
 
 Console.WriteLine("Hello, World!");
-Starter.Start();
+
