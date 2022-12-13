@@ -1,0 +1,11 @@
+﻿syntax = "proto3";
+service RemoteService {
+  rpc GetRemoteName (RemoteNameRequest) returns (RemoteName);
+}
+message RemoteNameRequest {
+  string remote_id = 1;
+}
+message RemoteName {
+  string method_name = 1;
+  string class_name = 2;
+}
