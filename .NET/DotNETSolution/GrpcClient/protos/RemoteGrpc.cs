@@ -7,9 +7,9 @@
 
 using grpc = global::Grpc.Core;
 
-public static partial class RemoteService
+public static partial class ZENRemoteService
 {
-  static readonly string __ServiceName = "RemoteService";
+  static readonly string __ServiceName = "ZENRemoteService";
 
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -45,17 +45,17 @@ public static partial class RemoteService
   }
 
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Marshaller<global::RemoteNameRequest> __Marshaller_RemoteNameRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RemoteNameRequest.Parser));
+  static readonly grpc::Marshaller<global::RemoteMethodRequest> __Marshaller_RemoteMethodRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RemoteMethodRequest.Parser));
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Marshaller<global::RemoteName> __Marshaller_RemoteName = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RemoteName.Parser));
+  static readonly grpc::Marshaller<global::RemoteResult> __Marshaller_RemoteResult = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RemoteResult.Parser));
 
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Method<global::RemoteNameRequest, global::RemoteName> __Method_GetRemoteName = new grpc::Method<global::RemoteNameRequest, global::RemoteName>(
+  static readonly grpc::Method<global::RemoteMethodRequest, global::RemoteResult> __Method_RunRemoteMethod = new grpc::Method<global::RemoteMethodRequest, global::RemoteResult>(
       grpc::MethodType.Unary,
       __ServiceName,
-      "GetRemoteName",
-      __Marshaller_RemoteNameRequest,
-      __Marshaller_RemoteName);
+      "RunRemoteMethod",
+      __Marshaller_RemoteMethodRequest,
+      __Marshaller_RemoteResult);
 
   /// <summary>Service descriptor</summary>
   public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -63,80 +63,80 @@ public static partial class RemoteService
     get { return global::RemoteReflection.Descriptor.Services[0]; }
   }
 
-  /// <summary>Base class for server-side implementations of RemoteService</summary>
-  [grpc::BindServiceMethod(typeof(RemoteService), "BindService")]
-  public abstract partial class RemoteServiceBase
+  /// <summary>Base class for server-side implementations of ZENRemoteService</summary>
+  [grpc::BindServiceMethod(typeof(ZENRemoteService), "BindService")]
+  public abstract partial class ZENRemoteServiceBase
   {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual global::System.Threading.Tasks.Task<global::RemoteName> GetRemoteName(global::RemoteNameRequest request, grpc::ServerCallContext context)
+    public virtual global::System.Threading.Tasks.Task<global::RemoteResult> RunRemoteMethod(global::RemoteMethodRequest request, grpc::ServerCallContext context)
     {
       throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
     }
 
   }
 
-  /// <summary>Client for RemoteService</summary>
-  public partial class RemoteServiceClient : grpc::ClientBase<RemoteServiceClient>
+  /// <summary>Client for ZENRemoteService</summary>
+  public partial class ZENRemoteServiceClient : grpc::ClientBase<ZENRemoteServiceClient>
   {
-    /// <summary>Creates a new client for RemoteService</summary>
+    /// <summary>Creates a new client for ZENRemoteService</summary>
     /// <param name="channel">The channel to use to make remote calls.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public RemoteServiceClient(grpc::ChannelBase channel) : base(channel)
+    public ZENRemoteServiceClient(grpc::ChannelBase channel) : base(channel)
     {
     }
-    /// <summary>Creates a new client for RemoteService that uses a custom <c>CallInvoker</c>.</summary>
+    /// <summary>Creates a new client for ZENRemoteService that uses a custom <c>CallInvoker</c>.</summary>
     /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public RemoteServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+    public ZENRemoteServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
     {
     }
     /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    protected RemoteServiceClient() : base()
+    protected ZENRemoteServiceClient() : base()
     {
     }
     /// <summary>Protected constructor to allow creation of configured clients.</summary>
     /// <param name="configuration">The client configuration.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    protected RemoteServiceClient(ClientBaseConfiguration configuration) : base(configuration)
+    protected ZENRemoteServiceClient(ClientBaseConfiguration configuration) : base(configuration)
     {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual global::RemoteName GetRemoteName(global::RemoteNameRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual global::RemoteResult RunRemoteMethod(global::RemoteMethodRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
-      return GetRemoteName(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      return RunRemoteMethod(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual global::RemoteName GetRemoteName(global::RemoteNameRequest request, grpc::CallOptions options)
+    public virtual global::RemoteResult RunRemoteMethod(global::RemoteMethodRequest request, grpc::CallOptions options)
     {
-      return CallInvoker.BlockingUnaryCall(__Method_GetRemoteName, null, options, request);
+      return CallInvoker.BlockingUnaryCall(__Method_RunRemoteMethod, null, options, request);
     }
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual grpc::AsyncUnaryCall<global::RemoteName> GetRemoteNameAsync(global::RemoteNameRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual grpc::AsyncUnaryCall<global::RemoteResult> RunRemoteMethodAsync(global::RemoteMethodRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
-      return GetRemoteNameAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      return RunRemoteMethodAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual grpc::AsyncUnaryCall<global::RemoteName> GetRemoteNameAsync(global::RemoteNameRequest request, grpc::CallOptions options)
+    public virtual grpc::AsyncUnaryCall<global::RemoteResult> RunRemoteMethodAsync(global::RemoteMethodRequest request, grpc::CallOptions options)
     {
-      return CallInvoker.AsyncUnaryCall(__Method_GetRemoteName, null, options, request);
+      return CallInvoker.AsyncUnaryCall(__Method_RunRemoteMethod, null, options, request);
     }
     /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    protected override RemoteServiceClient NewInstance(ClientBaseConfiguration configuration)
+    protected override ZENRemoteServiceClient NewInstance(ClientBaseConfiguration configuration)
     {
-      return new RemoteServiceClient(configuration);
+      return new ZENRemoteServiceClient(configuration);
     }
   }
 
   /// <summary>Creates service definition that can be registered with a server</summary>
   /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  public static grpc::ServerServiceDefinition BindService(RemoteServiceBase serviceImpl)
+  public static grpc::ServerServiceDefinition BindService(ZENRemoteServiceBase serviceImpl)
   {
     return grpc::ServerServiceDefinition.CreateBuilder()
-        .AddMethod(__Method_GetRemoteName, serviceImpl.GetRemoteName).Build();
+        .AddMethod(__Method_RunRemoteMethod, serviceImpl.RunRemoteMethod).Build();
   }
 
   /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -144,9 +144,9 @@ public static partial class RemoteService
   /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
   /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  public static void BindService(grpc::ServiceBinderBase serviceBinder, RemoteServiceBase serviceImpl)
+  public static void BindService(grpc::ServiceBinderBase serviceBinder, ZENRemoteServiceBase serviceImpl)
   {
-    serviceBinder.AddMethod(__Method_GetRemoteName, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::RemoteNameRequest, global::RemoteName>(serviceImpl.GetRemoteName));
+    serviceBinder.AddMethod(__Method_RunRemoteMethod, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::RemoteMethodRequest, global::RemoteResult>(serviceImpl.RunRemoteMethod));
   }
 
 }

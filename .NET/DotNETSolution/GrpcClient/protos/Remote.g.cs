@@ -22,32 +22,32 @@ public static partial class RemoteReflection {
   static RemoteReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "CgxSZW1vdGUucHJvdG8iJgoRUmVtb3RlTmFtZVJlcXVlc3QSEQoJcmVtb3Rl",
-          "X2lkGAEgASgJIjUKClJlbW90ZU5hbWUSEwoLbWV0aG9kX25hbWUYASABKAkS",
-          "EgoKY2xhc3NfbmFtZRgCIAEoCTJBCg1SZW1vdGVTZXJ2aWNlEjAKDUdldFJl",
-          "bW90ZU5hbWUSEi5SZW1vdGVOYW1lUmVxdWVzdBoLLlJlbW90ZU5hbWViBnBy",
-          "b3RvMw=="));
+          "CgxSZW1vdGUucHJvdG8iRAoTUmVtb3RlTWV0aG9kUmVxdWVzdBIOCgZtZXRo",
+          "b2QYASABKAkSDQoFY2xhc3MYAiABKAkSDgoGcGFyYW1zGAMgASgJIh4KDFJl",
+          "bW90ZVJlc3VsdBIOCgZyZXN1bHQYASABKAkySgoQWkVOUmVtb3RlU2Vydmlj",
+          "ZRI2Cg9SdW5SZW1vdGVNZXRob2QSFC5SZW1vdGVNZXRob2RSZXF1ZXN0Gg0u",
+          "UmVtb3RlUmVzdWx0YgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::RemoteNameRequest), global::RemoteNameRequest.Parser, new[]{ "RemoteId" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::RemoteName), global::RemoteName.Parser, new[]{ "MethodName", "ClassName" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::RemoteMethodRequest), global::RemoteMethodRequest.Parser, new[]{ "Method", "Class", "Params" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RemoteResult), global::RemoteResult.Parser, new[]{ "Result" }, null, null, null, null)
         }));
   }
   #endregion
 
 }
 #region Messages
-public sealed partial class RemoteNameRequest : pb::IMessage<RemoteNameRequest>
+public sealed partial class RemoteMethodRequest : pb::IMessage<RemoteMethodRequest>
 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     , pb::IBufferMessage
 #endif
 {
-  private static readonly pb::MessageParser<RemoteNameRequest> _parser = new pb::MessageParser<RemoteNameRequest>(() => new RemoteNameRequest());
+  private static readonly pb::MessageParser<RemoteMethodRequest> _parser = new pb::MessageParser<RemoteMethodRequest>(() => new RemoteMethodRequest());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<RemoteNameRequest> Parser { get { return _parser; } }
+  public static pb::MessageParser<RemoteMethodRequest> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -63,7 +63,7 @@ public sealed partial class RemoteNameRequest : pb::IMessage<RemoteNameRequest>
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RemoteNameRequest() {
+  public RemoteMethodRequest() {
     OnConstruction();
   }
 
@@ -71,45 +71,73 @@ public sealed partial class RemoteNameRequest : pb::IMessage<RemoteNameRequest>
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RemoteNameRequest(RemoteNameRequest other) : this() {
-    remoteId_ = other.remoteId_;
+  public RemoteMethodRequest(RemoteMethodRequest other) : this() {
+    method_ = other.method_;
+    class_ = other.class_;
+    params_ = other.params_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RemoteNameRequest Clone() {
-    return new RemoteNameRequest(this);
+  public RemoteMethodRequest Clone() {
+    return new RemoteMethodRequest(this);
   }
 
-  /// <summary>Field number for the "remote_id" field.</summary>
-  public const int RemoteIdFieldNumber = 1;
-  private string remoteId_ = "";
+  /// <summary>Field number for the "method" field.</summary>
+  public const int MethodFieldNumber = 1;
+  private string method_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string RemoteId {
-    get { return remoteId_; }
+  public string Method {
+    get { return method_; }
     set {
-      remoteId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      method_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "class" field.</summary>
+  public const int ClassFieldNumber = 2;
+  private string class_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Class {
+    get { return class_; }
+    set {
+      class_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "params" field.</summary>
+  public const int ParamsFieldNumber = 3;
+  private string params_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Params {
+    get { return params_; }
+    set {
+      params_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override bool Equals(object other) {
-    return Equals(other as RemoteNameRequest);
+    return Equals(other as RemoteMethodRequest);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(RemoteNameRequest other) {
+  public bool Equals(RemoteMethodRequest other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (RemoteId != other.RemoteId) return false;
+    if (Method != other.Method) return false;
+    if (Class != other.Class) return false;
+    if (Params != other.Params) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -117,7 +145,9 @@ public sealed partial class RemoteNameRequest : pb::IMessage<RemoteNameRequest>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
-    if (RemoteId.Length != 0) hash ^= RemoteId.GetHashCode();
+    if (Method.Length != 0) hash ^= Method.GetHashCode();
+    if (Class.Length != 0) hash ^= Class.GetHashCode();
+    if (Params.Length != 0) hash ^= Params.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -136,9 +166,17 @@ public sealed partial class RemoteNameRequest : pb::IMessage<RemoteNameRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (RemoteId.Length != 0) {
+    if (Method.Length != 0) {
       output.WriteRawTag(10);
-      output.WriteString(RemoteId);
+      output.WriteString(Method);
+    }
+    if (Class.Length != 0) {
+      output.WriteRawTag(18);
+      output.WriteString(Class);
+    }
+    if (Params.Length != 0) {
+      output.WriteRawTag(26);
+      output.WriteString(Params);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -150,9 +188,17 @@ public sealed partial class RemoteNameRequest : pb::IMessage<RemoteNameRequest>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (RemoteId.Length != 0) {
+    if (Method.Length != 0) {
       output.WriteRawTag(10);
-      output.WriteString(RemoteId);
+      output.WriteString(Method);
+    }
+    if (Class.Length != 0) {
+      output.WriteRawTag(18);
+      output.WriteString(Class);
+    }
+    if (Params.Length != 0) {
+      output.WriteRawTag(26);
+      output.WriteString(Params);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -164,8 +210,14 @@ public sealed partial class RemoteNameRequest : pb::IMessage<RemoteNameRequest>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
-    if (RemoteId.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(RemoteId);
+    if (Method.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Method);
+    }
+    if (Class.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Class);
+    }
+    if (Params.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Params);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -175,12 +227,18 @@ public sealed partial class RemoteNameRequest : pb::IMessage<RemoteNameRequest>
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(RemoteNameRequest other) {
+  public void MergeFrom(RemoteMethodRequest other) {
     if (other == null) {
       return;
     }
-    if (other.RemoteId.Length != 0) {
-      RemoteId = other.RemoteId;
+    if (other.Method.Length != 0) {
+      Method = other.Method;
+    }
+    if (other.Class.Length != 0) {
+      Class = other.Class;
+    }
+    if (other.Params.Length != 0) {
+      Params = other.Params;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -198,7 +256,15 @@ public sealed partial class RemoteNameRequest : pb::IMessage<RemoteNameRequest>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
-          RemoteId = input.ReadString();
+          Method = input.ReadString();
+          break;
+        }
+        case 18: {
+          Class = input.ReadString();
+          break;
+        }
+        case 26: {
+          Params = input.ReadString();
           break;
         }
       }
@@ -217,7 +283,15 @@ public sealed partial class RemoteNameRequest : pb::IMessage<RemoteNameRequest>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 10: {
-          RemoteId = input.ReadString();
+          Method = input.ReadString();
+          break;
+        }
+        case 18: {
+          Class = input.ReadString();
+          break;
+        }
+        case 26: {
+          Params = input.ReadString();
           break;
         }
       }
@@ -227,16 +301,16 @@ public sealed partial class RemoteNameRequest : pb::IMessage<RemoteNameRequest>
 
 }
 
-public sealed partial class RemoteName : pb::IMessage<RemoteName>
+public sealed partial class RemoteResult : pb::IMessage<RemoteResult>
 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     , pb::IBufferMessage
 #endif
 {
-  private static readonly pb::MessageParser<RemoteName> _parser = new pb::MessageParser<RemoteName>(() => new RemoteName());
+  private static readonly pb::MessageParser<RemoteResult> _parser = new pb::MessageParser<RemoteResult>(() => new RemoteResult());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<RemoteName> Parser { get { return _parser; } }
+  public static pb::MessageParser<RemoteResult> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -252,7 +326,7 @@ public sealed partial class RemoteName : pb::IMessage<RemoteName>
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RemoteName() {
+  public RemoteResult() {
     OnConstruction();
   }
 
@@ -260,59 +334,45 @@ public sealed partial class RemoteName : pb::IMessage<RemoteName>
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RemoteName(RemoteName other) : this() {
-    methodName_ = other.methodName_;
-    className_ = other.className_;
+  public RemoteResult(RemoteResult other) : this() {
+    result_ = other.result_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RemoteName Clone() {
-    return new RemoteName(this);
+  public RemoteResult Clone() {
+    return new RemoteResult(this);
   }
 
-  /// <summary>Field number for the "method_name" field.</summary>
-  public const int MethodNameFieldNumber = 1;
-  private string methodName_ = "";
+  /// <summary>Field number for the "result" field.</summary>
+  public const int ResultFieldNumber = 1;
+  private string result_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string MethodName {
-    get { return methodName_; }
+  public string Result {
+    get { return result_; }
     set {
-      methodName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "class_name" field.</summary>
-  public const int ClassNameFieldNumber = 2;
-  private string className_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string ClassName {
-    get { return className_; }
-    set {
-      className_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      result_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override bool Equals(object other) {
-    return Equals(other as RemoteName);
+    return Equals(other as RemoteResult);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(RemoteName other) {
+  public bool Equals(RemoteResult other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (MethodName != other.MethodName) return false;
-    if (ClassName != other.ClassName) return false;
+    if (Result != other.Result) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -320,8 +380,7 @@ public sealed partial class RemoteName : pb::IMessage<RemoteName>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
-    if (MethodName.Length != 0) hash ^= MethodName.GetHashCode();
-    if (ClassName.Length != 0) hash ^= ClassName.GetHashCode();
+    if (Result.Length != 0) hash ^= Result.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -340,13 +399,9 @@ public sealed partial class RemoteName : pb::IMessage<RemoteName>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (MethodName.Length != 0) {
+    if (Result.Length != 0) {
       output.WriteRawTag(10);
-      output.WriteString(MethodName);
-    }
-    if (ClassName.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteString(ClassName);
+      output.WriteString(Result);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -358,13 +413,9 @@ public sealed partial class RemoteName : pb::IMessage<RemoteName>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (MethodName.Length != 0) {
+    if (Result.Length != 0) {
       output.WriteRawTag(10);
-      output.WriteString(MethodName);
-    }
-    if (ClassName.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteString(ClassName);
+      output.WriteString(Result);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -376,11 +427,8 @@ public sealed partial class RemoteName : pb::IMessage<RemoteName>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
-    if (MethodName.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(MethodName);
-    }
-    if (ClassName.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(ClassName);
+    if (Result.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Result);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -390,15 +438,12 @@ public sealed partial class RemoteName : pb::IMessage<RemoteName>
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(RemoteName other) {
+  public void MergeFrom(RemoteResult other) {
     if (other == null) {
       return;
     }
-    if (other.MethodName.Length != 0) {
-      MethodName = other.MethodName;
-    }
-    if (other.ClassName.Length != 0) {
-      ClassName = other.ClassName;
+    if (other.Result.Length != 0) {
+      Result = other.Result;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -416,11 +461,7 @@ public sealed partial class RemoteName : pb::IMessage<RemoteName>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
-          MethodName = input.ReadString();
-          break;
-        }
-        case 18: {
-          ClassName = input.ReadString();
+          Result = input.ReadString();
           break;
         }
       }
@@ -439,11 +480,7 @@ public sealed partial class RemoteName : pb::IMessage<RemoteName>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 10: {
-          MethodName = input.ReadString();
-          break;
-        }
-        case 18: {
-          ClassName = input.ReadString();
+          Result = input.ReadString();
           break;
         }
       }
