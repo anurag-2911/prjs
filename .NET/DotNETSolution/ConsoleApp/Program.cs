@@ -20,7 +20,7 @@ try
 	{
 		Services =
 		{
-			RemoteService.BindService(new Controller())
+            ZENRemoteService.BindService(new RemoteMethodImpl())
 		},
 		Ports =
 		{
