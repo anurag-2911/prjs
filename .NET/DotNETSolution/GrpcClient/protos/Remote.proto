@@ -3,9 +3,10 @@ service ZENRemoteService {
   rpc RunRemoteMethod (RemoteMethodRequest) returns (RemoteResult);
 }
 message RemoteMethodRequest {
-  string method = 1;
-  string class  =  2;
-  string params = 3;
+  string methodName = 1;
+  string namespaceQualifiedClassName  =  2;
+  string assemblyName =3;
+  string parameters = 4;
 }
 message RemoteResult {
   string result = 1;

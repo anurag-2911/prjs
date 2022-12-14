@@ -1,11 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using CommonLibDotNETFramework;
 using ConsoleApp.controller;
 using Grpc.Core;
 
 Console.WriteLine("Hello, World!");
 
-Utils.Hello();
+
 
 string runtime = System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription;
 

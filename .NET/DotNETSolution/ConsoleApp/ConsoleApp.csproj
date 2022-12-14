@@ -18,8 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonLibDotNETFramework\CommonLibDotNETFramework.csproj" />
-    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj" />
+    <ProjectReference Include="..\ClassLibraryDotNet\ClassLibraryDotNet.csproj" />
   </ItemGroup>
 
 </Project>

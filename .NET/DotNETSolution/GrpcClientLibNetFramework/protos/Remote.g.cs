@@ -22,16 +22,15 @@ public static partial class RemoteReflection {
   static RemoteReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "CgxSZW1vdGUucHJvdG8ieAoTUmVtb3RlTWV0aG9kUmVxdWVzdBISCgptZXRo",
-          "b2ROYW1lGAEgASgJEiMKG25hbWVzcGFjZVF1YWxpZmllZENsYXNzTmFtZRgC",
-          "IAEoCRIUCgxhc3NlbWJseU5hbWUYAyABKAkSEgoKcGFyYW1ldGVycxgEIAEo",
-          "CSIeCgxSZW1vdGVSZXN1bHQSDgoGcmVzdWx0GAEgASgJMkoKEFpFTlJlbW90",
-          "ZVNlcnZpY2USNgoPUnVuUmVtb3RlTWV0aG9kEhQuUmVtb3RlTWV0aG9kUmVx",
-          "dWVzdBoNLlJlbW90ZVJlc3VsdGIGcHJvdG8z"));
+          "CgxSZW1vdGUucHJvdG8iRAoTUmVtb3RlTWV0aG9kUmVxdWVzdBIOCgZtZXRo",
+          "b2QYASABKAkSDQoFY2xhc3MYAiABKAkSDgoGcGFyYW1zGAMgASgJIh4KDFJl",
+          "bW90ZVJlc3VsdBIOCgZyZXN1bHQYASABKAkySgoQWkVOUmVtb3RlU2Vydmlj",
+          "ZRI2Cg9SdW5SZW1vdGVNZXRob2QSFC5SZW1vdGVNZXRob2RSZXF1ZXN0Gg0u",
+          "UmVtb3RlUmVzdWx0YgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::RemoteMethodRequest), global::RemoteMethodRequest.Parser, new[]{ "MethodName", "NamespaceQualifiedClassName", "AssemblyName", "Parameters" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RemoteMethodRequest), global::RemoteMethodRequest.Parser, new[]{ "Method", "Class", "Params" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RemoteResult), global::RemoteResult.Parser, new[]{ "Result" }, null, null, null, null)
         }));
   }
@@ -73,10 +72,9 @@ public sealed partial class RemoteMethodRequest : pb::IMessage<RemoteMethodReque
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public RemoteMethodRequest(RemoteMethodRequest other) : this() {
-    methodName_ = other.methodName_;
-    namespaceQualifiedClassName_ = other.namespaceQualifiedClassName_;
-    assemblyName_ = other.assemblyName_;
-    parameters_ = other.parameters_;
+    method_ = other.method_;
+    class_ = other.class_;
+    params_ = other.params_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -86,51 +84,39 @@ public sealed partial class RemoteMethodRequest : pb::IMessage<RemoteMethodReque
     return new RemoteMethodRequest(this);
   }
 
-  /// <summary>Field number for the "methodName" field.</summary>
-  public const int MethodNameFieldNumber = 1;
-  private string methodName_ = "";
+  /// <summary>Field number for the "method" field.</summary>
+  public const int MethodFieldNumber = 1;
+  private string method_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string MethodName {
-    get { return methodName_; }
+  public string Method {
+    get { return method_; }
     set {
-      methodName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      method_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
-  /// <summary>Field number for the "namespaceQualifiedClassName" field.</summary>
-  public const int NamespaceQualifiedClassNameFieldNumber = 2;
-  private string namespaceQualifiedClassName_ = "";
+  /// <summary>Field number for the "class" field.</summary>
+  public const int ClassFieldNumber = 2;
+  private string class_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string NamespaceQualifiedClassName {
-    get { return namespaceQualifiedClassName_; }
+  public string Class {
+    get { return class_; }
     set {
-      namespaceQualifiedClassName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      class_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
-  /// <summary>Field number for the "assemblyName" field.</summary>
-  public const int AssemblyNameFieldNumber = 3;
-  private string assemblyName_ = "";
+  /// <summary>Field number for the "params" field.</summary>
+  public const int ParamsFieldNumber = 3;
+  private string params_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string AssemblyName {
-    get { return assemblyName_; }
+  public string Params {
+    get { return params_; }
     set {
-      assemblyName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "parameters" field.</summary>
-  public const int ParametersFieldNumber = 4;
-  private string parameters_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Parameters {
-    get { return parameters_; }
-    set {
-      parameters_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      params_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
@@ -149,10 +135,9 @@ public sealed partial class RemoteMethodRequest : pb::IMessage<RemoteMethodReque
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (MethodName != other.MethodName) return false;
-    if (NamespaceQualifiedClassName != other.NamespaceQualifiedClassName) return false;
-    if (AssemblyName != other.AssemblyName) return false;
-    if (Parameters != other.Parameters) return false;
+    if (Method != other.Method) return false;
+    if (Class != other.Class) return false;
+    if (Params != other.Params) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -160,10 +145,9 @@ public sealed partial class RemoteMethodRequest : pb::IMessage<RemoteMethodReque
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
-    if (MethodName.Length != 0) hash ^= MethodName.GetHashCode();
-    if (NamespaceQualifiedClassName.Length != 0) hash ^= NamespaceQualifiedClassName.GetHashCode();
-    if (AssemblyName.Length != 0) hash ^= AssemblyName.GetHashCode();
-    if (Parameters.Length != 0) hash ^= Parameters.GetHashCode();
+    if (Method.Length != 0) hash ^= Method.GetHashCode();
+    if (Class.Length != 0) hash ^= Class.GetHashCode();
+    if (Params.Length != 0) hash ^= Params.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -182,21 +166,17 @@ public sealed partial class RemoteMethodRequest : pb::IMessage<RemoteMethodReque
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (MethodName.Length != 0) {
+    if (Method.Length != 0) {
       output.WriteRawTag(10);
-      output.WriteString(MethodName);
+      output.WriteString(Method);
     }
-    if (NamespaceQualifiedClassName.Length != 0) {
+    if (Class.Length != 0) {
       output.WriteRawTag(18);
-      output.WriteString(NamespaceQualifiedClassName);
+      output.WriteString(Class);
     }
-    if (AssemblyName.Length != 0) {
+    if (Params.Length != 0) {
       output.WriteRawTag(26);
-      output.WriteString(AssemblyName);
-    }
-    if (Parameters.Length != 0) {
-      output.WriteRawTag(34);
-      output.WriteString(Parameters);
+      output.WriteString(Params);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -208,21 +188,17 @@ public sealed partial class RemoteMethodRequest : pb::IMessage<RemoteMethodReque
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (MethodName.Length != 0) {
+    if (Method.Length != 0) {
       output.WriteRawTag(10);
-      output.WriteString(MethodName);
+      output.WriteString(Method);
     }
-    if (NamespaceQualifiedClassName.Length != 0) {
+    if (Class.Length != 0) {
       output.WriteRawTag(18);
-      output.WriteString(NamespaceQualifiedClassName);
+      output.WriteString(Class);
     }
-    if (AssemblyName.Length != 0) {
+    if (Params.Length != 0) {
       output.WriteRawTag(26);
-      output.WriteString(AssemblyName);
-    }
-    if (Parameters.Length != 0) {
-      output.WriteRawTag(34);
-      output.WriteString(Parameters);
+      output.WriteString(Params);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -234,17 +210,14 @@ public sealed partial class RemoteMethodRequest : pb::IMessage<RemoteMethodReque
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
-    if (MethodName.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(MethodName);
+    if (Method.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Method);
     }
-    if (NamespaceQualifiedClassName.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(NamespaceQualifiedClassName);
+    if (Class.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Class);
     }
-    if (AssemblyName.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(AssemblyName);
-    }
-    if (Parameters.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Parameters);
+    if (Params.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Params);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -258,17 +231,14 @@ public sealed partial class RemoteMethodRequest : pb::IMessage<RemoteMethodReque
     if (other == null) {
       return;
     }
-    if (other.MethodName.Length != 0) {
-      MethodName = other.MethodName;
+    if (other.Method.Length != 0) {
+      Method = other.Method;
     }
-    if (other.NamespaceQualifiedClassName.Length != 0) {
-      NamespaceQualifiedClassName = other.NamespaceQualifiedClassName;
+    if (other.Class.Length != 0) {
+      Class = other.Class;
     }
-    if (other.AssemblyName.Length != 0) {
-      AssemblyName = other.AssemblyName;
-    }
-    if (other.Parameters.Length != 0) {
-      Parameters = other.Parameters;
+    if (other.Params.Length != 0) {
+      Params = other.Params;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -286,19 +256,15 @@ public sealed partial class RemoteMethodRequest : pb::IMessage<RemoteMethodReque
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
-          MethodName = input.ReadString();
+          Method = input.ReadString();
           break;
         }
         case 18: {
-          NamespaceQualifiedClassName = input.ReadString();
+          Class = input.ReadString();
           break;
         }
         case 26: {
-          AssemblyName = input.ReadString();
-          break;
-        }
-        case 34: {
-          Parameters = input.ReadString();
+          Params = input.ReadString();
           break;
         }
       }
@@ -317,19 +283,15 @@ public sealed partial class RemoteMethodRequest : pb::IMessage<RemoteMethodReque
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 10: {
-          MethodName = input.ReadString();
+          Method = input.ReadString();
           break;
         }
         case 18: {
-          NamespaceQualifiedClassName = input.ReadString();
+          Class = input.ReadString();
           break;
         }
         case 26: {
-          AssemblyName = input.ReadString();
-          break;
-        }
-        case 34: {
-          Parameters = input.ReadString();
+          Params = input.ReadString();
           break;
         }
       }

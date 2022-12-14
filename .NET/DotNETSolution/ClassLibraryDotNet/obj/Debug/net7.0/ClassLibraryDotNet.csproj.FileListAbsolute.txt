@@ -1,0 +1,12 @@
+C:\work\projects\prjs\.NET\DotNETSolution\ClassLibraryDotNet\bin\Debug\net7.0\ClassLibraryDotNet.deps.json
+C:\work\projects\prjs\.NET\DotNETSolution\ClassLibraryDotNet\bin\Debug\net7.0\ClassLibraryDotNet.dll
+C:\work\projects\prjs\.NET\DotNETSolution\ClassLibraryDotNet\bin\Debug\net7.0\ClassLibraryDotNet.pdb
+C:\work\projects\prjs\.NET\DotNETSolution\ClassLibraryDotNet\obj\Debug\net7.0\ClassLibraryDotNet.csproj.AssemblyReference.cache
+C:\work\projects\prjs\.NET\DotNETSolution\ClassLibraryDotNet\obj\Debug\net7.0\ClassLibraryDotNet.GeneratedMSBuildEditorConfig.editorconfig
+C:\work\projects\prjs\.NET\DotNETSolution\ClassLibraryDotNet\obj\Debug\net7.0\ClassLibraryDotNet.AssemblyInfoInputs.cache
+C:\work\projects\prjs\.NET\DotNETSolution\ClassLibraryDotNet\obj\Debug\net7.0\ClassLibraryDotNet.AssemblyInfo.cs
+C:\work\projects\prjs\.NET\DotNETSolution\ClassLibraryDotNet\obj\Debug\net7.0\ClassLibraryDotNet.csproj.CoreCompileInputs.cache
+C:\work\projects\prjs\.NET\DotNETSolution\ClassLibraryDotNet\obj\Debug\net7.0\ClassLibraryDotNet.dll
+C:\work\projects\prjs\.NET\DotNETSolution\ClassLibraryDotNet\obj\Debug\net7.0\refint\ClassLibraryDotNet.dll
+C:\work\projects\prjs\.NET\DotNETSolution\ClassLibraryDotNet\obj\Debug\net7.0\ClassLibraryDotNet.pdb
+C:\work\projects\prjs\.NET\DotNETSolution\ClassLibraryDotNet\obj\Debug\net7.0\ref\ClassLibraryDotNet.dll
