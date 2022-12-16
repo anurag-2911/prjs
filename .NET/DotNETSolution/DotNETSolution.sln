@@ -7,13 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppDotNetFramework", "ConsoleAppDotNetFramework\ConsoleAppDotNetFramework.csproj", "{4F784059-9787-4A1C-A58D-356206F67887}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcClient", "GrpcClient\GrpcClient.csproj", "{622E89FD-2F95-4FFD-A104-E35951E94505}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcClient", "GrpcClient\GrpcClient.csproj", "{622E89FD-2F95-4FFD-A104-E35951E94505}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryDotNet", "ClassLibraryDotNet\ClassLibraryDotNet.csproj", "{5C025F39-F5B0-4748-9CF7-9BF0BD2932E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibraryDotNet", "ClassLibraryDotNet\ClassLibraryDotNet.csproj", "{5C025F39-F5B0-4748-9CF7-9BF0BD2932E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcClientDotNetFramework", "GrpcClientDotNetFramework\GrpcClientDotNetFramework.csproj", "{493CE34A-023E-4966-8735-BD6EE44DFF36}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcClientLibNetFramework", "GrpcClientLibNetFramework\GrpcClientLibNetFramework.csproj", "{895CA061-AE8C-422A-8059-8B950209CF7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloGithubActions", "..\..\..\..\hackfest\github-actions-test\HelloGithubActions\HelloGithubActions.csproj", "{317CD8F6-D801-4CB7-9DDE-536789125CD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloGithubActionsTests", "..\..\..\..\hackfest\github-actions-test\HelloGithubActionsTests\HelloGithubActionsTests.csproj", "{9F0DFB76-8FE4-4FBA-9EA9-A8FC67FD196C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{895CA061-AE8C-422A-8059-8B950209CF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{895CA061-AE8C-422A-8059-8B950209CF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{895CA061-AE8C-422A-8059-8B950209CF7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{317CD8F6-D801-4CB7-9DDE-536789125CD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{317CD8F6-D801-4CB7-9DDE-536789125CD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{317CD8F6-D801-4CB7-9DDE-536789125CD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{317CD8F6-D801-4CB7-9DDE-536789125CD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F0DFB76-8FE4-4FBA-9EA9-A8FC67FD196C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F0DFB76-8FE4-4FBA-9EA9-A8FC67FD196C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F0DFB76-8FE4-4FBA-9EA9-A8FC67FD196C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F0DFB76-8FE4-4FBA-9EA9-A8FC67FD196C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
