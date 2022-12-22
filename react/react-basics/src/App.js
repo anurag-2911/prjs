@@ -5,7 +5,7 @@ function App() {
   return (
     <>
     <p>Hello world!</p>
-    <Message msg="halo" />
+    
     </>
   );
 }
