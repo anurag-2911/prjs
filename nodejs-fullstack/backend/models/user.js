@@ -10,17 +10,17 @@ const userSchema = mongoose.Schema({
   token: { type: String },
 });
 
-const validate = (user)=>{
-const schema = Joi.object({
-    firstName:Joi.string().required(),
-    lastName:Joi.string().required(),
-    userName:Joi.string().required(),
-    email:Joi.string().required(),
-    password:Joi.string().required(),
-});
-return schema.validate(user);
-}
+const validate = (user) => {
+  const schema = Joi.object({
+    firstName: Joi.string().required(),
+    lastName: Joi.string().required(),
+    userName: Joi.string().required(),
+    email: Joi.string().required(),
+    password: Joi.string().required(),
+  });
+  return schema.validate(user);
+};
 
 const User = mongoose.model("user", userSchema);
 
-module.exports ={User,validate};
+module.exports = { User, validate };
