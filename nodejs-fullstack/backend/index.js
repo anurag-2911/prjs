@@ -1,14 +1,16 @@
-const express = require('express');
+// backend/index.js
+
+require("dotenv").config();
+require("./database/database.js").connect();
+const express = require("express");
+
 const app = express();
-const port =5555;
+const port = process.env.PORT || 5000;
 
-const dbConnet = require('./database/database').connect('mongodb://localhost:27017');
-
-app.get('/',(req,res)=>{
-    console.log('request received',req.ip);
-res.send('Hello World');
+app.get("/", (req, res) => {
+  res.send({ message: "Hello, nodemon!" });
 });
 
-app.listen(port,()=>{
-    console.log(`server listening on port ${port}`);
+app.listen(port, () => {
+  console.log(`app is listening at http://localhost:${port}`);
 });

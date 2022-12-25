@@ -1,13 +1,19 @@
+// backend/database/database.js
+
 const mongoose = require("mongoose");
-mongoose.set('strictQuery', true);
-exports.connect = (MONGO_URI) => {
+
+const { MONGO_URI } = "mongodb://localhost:27017";
+
+exports.connect = () => {
   mongoose
     .connect(MONGO_URI)
     .then(() => {
-      console.log("connecton to database successful");
+      console.log("connected to database successfully...");
     })
     .catch((error) => {
-      console.log("failed to connect to database,terminating the application");
+      console.log(
+        "failed to connect to the database. terminating the application..."
+      );
       console.error(error);
       process.exit(1);
     });
