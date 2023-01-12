@@ -2,10 +2,6 @@
 using ConsoleApp.controller;
 using Grpc.Core;
 
-Console.WriteLine("Hello, World!");
-
-
-
 string runtime = System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription;
 
 Console.WriteLine("runtime " + runtime);
