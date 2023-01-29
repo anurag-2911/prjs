@@ -18,3 +18,5 @@
 /.NET/DotNETSolution/GrpcClientLibNetFramework/obj
 /.NET/DotNETSolution/GrpcClientLibNetFramework/bin
 /nodejs-fullstack/node_modules
+/.NETFW/Test01/obj
+/.NETFW/Test01/bin
