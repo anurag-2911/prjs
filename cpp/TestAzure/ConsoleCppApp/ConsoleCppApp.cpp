@@ -3,11 +3,23 @@
 
 #include <iostream>
 #include <windows.h>
+#include <string>
 
 int main()
 {
 	std::cout << "Hello World!\n";
-	LPWSTR lpwzDomain;
+	std::string domain = "AzureAD";
+	LPWSTR lpwzDomain = const_cast<LPTSTR>(TEXT("AzureAD"));
+	const wchar_t* string1 = L"AzureAD";
+	int ret = wcscmp(string1, lpwzDomain);
+	if (ret == 0) {
+		std::cout << "dunno ekke hai";
+	}
+	else {
+		std::cout << "olga";
+	}
+
+
 
 }
 
