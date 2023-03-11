@@ -21,3 +21,12 @@
 /.NETFW/Test01/obj
 /.NETFW/Test01/bin
 /cpp/TestAzure/ConsoleCppApp/x64
+/cpp/CalledOverCom/obj
+/cpp/CalledOverCom/bin
+/cpp/CppCaller/x64
+/cpp/CppCaller/Debug
+/cpp/TestInterop/.vs
+/cpp/TestInterop/x64
+/cpp/TestInterop/bin
+/cpp/TestInterop/Debug
+/cpp/TestInterop/obj
