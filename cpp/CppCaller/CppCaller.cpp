@@ -1,7 +1,7 @@
 #include <windows.h>
 #include <stdio.h>
 #include "Header.h"
-
+#include <comdef.h>
 
 
 int main()
@@ -30,6 +30,8 @@ int main()
 	hr = CoCreateInstance(clsid, NULL, CLSCTX_INPROC_SERVER, iid, (LPVOID*)&pMyLibrary);
 	if (FAILED(hr))
 	{
+		_com_error err(hr);
+		LPCTSTR errMsg = err.ErrorMessage();
 		printf("CoCreateInstance failed with error 0x%x\n", hr);
 		return 1;
 	}

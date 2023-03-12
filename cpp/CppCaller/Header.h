@@ -1,2 +1,2 @@
 #pragma once
-#import "CalledOverCom.tlb" raw_interfaces_only
+#import "C:\work\learn\prjs\cpp\CalledOverCom\bin\Release\CalledOverCom.tlb" raw_interfaces_only
