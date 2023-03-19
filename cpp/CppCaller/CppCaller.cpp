@@ -12,22 +12,22 @@ int main()
 	IID iid;
 	HRESULT hr;
 
-	hr = CLSIDFromProgID(L"CalledOverCom.MyLibrary", &clsid);
+	hr = CLSIDFromProgID(L"CalledOverCom.ComBridge", &clsid);
 	if (FAILED(hr))
 	{
 		printf("CLSIDFromProgID failed with error 0x%x\n", hr);
 		return 1;
 	}
 
-	hr = IIDFromString(L"{12345678-1234-1234-1234-123456789012}", &iid);
+	hr = IIDFromString(L"{225a4f70-2191-4398-8f8d-5172eee5ce1e}", &iid);
 	if (FAILED(hr))
 	{
 		printf("IIDFromString failed with error 0x%x\n", hr);
 		return 1;
 	}
 
-	CalledOverCom::IMyLibrary* pMyLibrary = NULL;
-	hr = CoCreateInstance(clsid, NULL, CLSCTX_INPROC_SERVER, iid, (LPVOID*)&pMyLibrary);
+	CalledOverCom::IComBridge* comBridge = NULL;
+	hr = CoCreateInstance(clsid, NULL, CLSCTX_INPROC_SERVER, iid, (LPVOID*)&comBridge);
 	if (FAILED(hr))
 	{
 		_com_error err(hr);
@@ -36,9 +36,9 @@ int main()
 		return 1;
 	}
 
-	pMyLibrary->DoSomething();
+	comBridge->DoSomething();
 
-	pMyLibrary->Release();
+	comBridge->Release();
 
 	CoUninitialize();
 
