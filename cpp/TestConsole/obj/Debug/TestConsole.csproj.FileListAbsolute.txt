@@ -1,0 +1,7 @@
+C:\work\learn\prjs\cpp\TestConsole\bin\Debug\TestConsole.exe.config
+C:\work\learn\prjs\cpp\TestConsole\bin\Debug\TestConsole.exe
+C:\work\learn\prjs\cpp\TestConsole\bin\Debug\TestConsole.pdb
+C:\work\learn\prjs\cpp\TestConsole\obj\Debug\TestConsole.csproj.AssemblyReference.cache
+C:\work\learn\prjs\cpp\TestConsole\obj\Debug\TestConsole.csproj.CoreCompileInputs.cache
+C:\work\learn\prjs\cpp\TestConsole\obj\Debug\TestConsole.exe
+C:\work\learn\prjs\cpp\TestConsole\obj\Debug\TestConsole.pdb
