@@ -34,7 +34,7 @@
     <RegisterForComInterop>true</RegisterForComInterop>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AppModule, Version=20.4.0.69, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="AppModule, Version=20.2.0.1007, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\github\win-agent-spoke\client\lib\zen\AppModule.dll</HintPath>
     </Reference>
